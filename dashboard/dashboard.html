@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Data Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <header>
+        <h1>Crime Data Analysis Dashboard</h1>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="register-crime">
+            <h2>Register New Crime</h2>
+            <form>
+                <input type="text" placeholder="Crime Type" required>
+                <input type="text" placeholder="Location" required>
+                <input type="date" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="search-section">
+            <h2>Search by Area</h2>
+            <input type="text" class="search-bar" placeholder="Enter area name...">
+            <button>Search</button>
+        </section>
+
+        <section class="map-section">
+            <h2>Crime Hotspot Map</h2>
+            <div class="map-placeholder">
+                <p>Google Maps Integration Here</p>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <div class="graph-container">
+                <h2>Crime Trend Analysis</h2>
+                <div class="chart-placeholder">
+                    <p>Line Graph: Crime Increase/Decline</p>
+                </div>
+            </div>
+            <div class="pie-container">
+                <h2>Crime Distribution</h2>
+                <div class="chart-placeholder">
+                    <p>Pie Chart: Crime Categories</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Local Authorities Contact</h2>
+            <div class="contact-info">
+                <p><strong>Police Station:</strong> +91XXXXXXXXXX </p>
+                <p><strong>Fire Department:</strong> +91XXXXXXXXXX</p>
+                <p><strong>Emergency:</strong> 100</p>
+                <p><strong>Crime Prevention Unit:</strong> +91XXXXXXXXXX</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
