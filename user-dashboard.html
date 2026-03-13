@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Crime Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body data-page="user-dashboard">
+
+    <header>
+        <h1>User Crime Dashboard</h1>
+        <nav>
+            <a href="#" data-action="logout">Logout</a>
+        </nav>
+    </header>
+
+
+
+    <main class="container">
+
+        <section class="crime-search-section">
+            <h2>Search Crime Cases</h2>
+            <form id="userCaseFilterForm" class="user-filter-grid">
+                <input type="text" name="fir_no" placeholder="FIR Number (optional)">
+                <input type="text" name="location" placeholder="Location">
+                <input type="date" name="crime_date">
+                <input type="text" name="crime_type" placeholder="Type of Crime">
+                <select name="status">
+                    <option value="">Any Status</option>
+                    <option value="REPORTED">REPORTED</option>
+                    <option value="INVESTIGATION">INVESTIGATION</option>
+                    <option value="CLOSED">CLOSED</option>
+                </select>
+                <div class="filter-actions">
+                    <button type="submit">Apply Filters</button>
+                    <button type="reset" class="secondary-btn">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="search-results-section">
+            <h2>Search Results</h2>
+
+            <div class="results-table-wrapper">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>FIR No</th>
+                            <th>Type</th>
+                            <th>Area Name</th>
+                            <th>Description</th>
+                            <th>Crime Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Results will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+        <!-- SEARCH -->
+        <section class="search-section">
+            <h2>Search by Area</h2>
+            <form id="areaSearchForm" class="area-search-form">
+                <input id="areaSearchInput" type="text" class="search-bar" placeholder="Enter area name...">
+                <button id="areaSearchBtn" type="submit">Search</button>
+            </form>
+            <p id="areaSearchMsg" class="search-msg"></p>
+        </section>
+
+        <!-- MAP -->
+        <section class="map-section">
+            <h2>Crime Hotspot Map</h2>
+            <div class="card">
+                <div id="map"></div>
+            </div>
+        </section>
+
+        <!-- CHARTS -->
+        <section class="chart-section">
+            <div>
+                <h2>Crime Trend Analysis</h2>
+                <canvas id="trendChart"></canvas>
+            </div>
+            <div>
+                <h2>Crime Distribution</h2>
+                <canvas id="distributionChart"></canvas>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+       <section class="contact-section">
+<h2>Emergency Contacts</h2>
+
+<div class="contact-info">
+
+<p><strong>Police:</strong> 100</p>
+<p><strong>Fire:</strong> 101</p>
+<p><strong>Ambulance:</strong> 108</p>
+
+<hr>
+
+<h3>Nearest Police Station</h3>
+
+<p id="nearestStation">Detecting your location...</p>
+
+</div>
+</section>
+
+    </main>
+
+    <script src="js/map.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

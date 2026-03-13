@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Crime Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+</head>
+
+<body data-page="police-dashboard">
+
+<header>
+    <h1>Police Crime Dashboard</h1>
+    <nav>
+        <a href="#" data-action="logout">Logout</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <!-- FILE FIR -->
+    <section class="fir-section">
+        <h2>File New FIR</h2>
+
+        <form id="firForm">
+
+            <input type="text" name="fir_no" placeholder="FIR Number" required>
+
+            <select name="crime_type" required>
+                <option value="">Select Crime Type</option>
+                <option value="Theft">Theft</option>
+                <option value="Burglary">Burglary</option>
+                <option value="Assault">Assault</option>
+                <option value="Fraud">Fraud</option>
+                <option value="Snatching">Snatching</option>
+                <option value="Robbery">Robbery</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="text" name="area_name" placeholder="Area Name" required>
+
+            <textarea name="description" placeholder="Crime Description" required></textarea>
+
+            <select name="status" required>
+                <option value="">Select Status</option>
+                <option value="REPORTED">REPORTED</option>
+                <option value="INVESTIGATION">INVESTIGATION</option>
+                <option value="CLOSED">CLOSED</option>
+            </select>
+
+            <input type="date" name="crime_date" required>
+
+            <button type="button" id="registerFIR">Register FIR</button>
+
+        </form>
+    </section>
+
+    <!-- SEARCH AREA -->
+    <section class="search-section">
+
+        <h2>Search by Area</h2>
+
+        <form id="areaSearchForm" class="area-search-form">
+
+            <input
+                id="areaSearchInput"
+                type="text"
+                class="search-bar"
+                placeholder="Enter area name..."
+            >
+
+            <button id="areaSearchBtn" type="submit">Search</button>
+
+        </form>
+
+        <p id="areaSearchMsg" class="search-msg"></p>
+
+    </section>
+
+    <!-- SEARCH RESULTS -->
+    <section class="search-results-section">
+
+        <h2>Search Results</h2>
+
+        <div class="results-table-wrapper">
+
+            <table class="results-table">
+
+                <thead>
+                    <tr>
+                        <th>FIR No</th>
+                        <th>Type</th>
+                        <th>Area Name</th>
+                        <th>Description</th>
+                        <th>Crime Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="resultsBody">
+
+                    <tr>
+                        <td colspan="6">Loading crimes...</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- MAP -->
+    <section class="map-section">
+
+        <h2>Crime Hotspot Map</h2>
+
+        <div class="card">
+
+            <div id="map"></div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/map.js"></script>
+<script src="js/script.js?v=2"></script>
+
+</body>
+</html>
